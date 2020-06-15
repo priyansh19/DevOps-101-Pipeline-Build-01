@@ -60,5 +60,10 @@ Steps :
     kops update cluster devops.pipeline.01 --yes
     ```
 
-13. 
+13. Validate your K8s Cluster
+    ```shell
+    kops validate cluster
+    ```
+
+14. 
 
