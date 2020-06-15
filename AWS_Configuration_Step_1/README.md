@@ -32,7 +32,33 @@ Steps :
 7. Create an S3 bucket for storing intermediate data and check whether your IAM role is working correctly with this command 
       
     ```shell
-      aws s3 ls
+    aws s3 ls
     ```
-8. 
+
+8. Create a Route53 private hosted zone in AWS console:
+    ```shell
+    name: pipeline01
+    ```
+
+9. Expose environment variables:
+    ```shell
+     export KOPS_STATE_STORE=s3://devops-pipeline-01
+     ```
+
+10. Create SSH Key Pairs:
+    ```shell
+    ssh-keygen
+    ```
+
+11. Create kubernetes cluster definition on S3 bucket:
+    ```shell
+    cluster --cloud=aws --zones=ap-south-1b --name=devops.pipeline.01 --dns-zone=pipeline01 --dns private
+    ```
+    
+12. Create Kubernetes Cluster 
+    ```shell
+    kops update cluster devops.pipeline.01 --yes
+    ```
+
+13. 
 
