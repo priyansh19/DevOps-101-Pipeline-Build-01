@@ -12,6 +12,7 @@ Tools Used:
 - Jenkins
 - Ansible
 - Docker
+- Kops
 - Kubernetes
 
 ### Flow of the pipeline will be:
